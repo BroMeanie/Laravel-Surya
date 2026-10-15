@@ -221,11 +221,3 @@
         @endif
     </body>
 </html>
-
-...
-<h1 class="mb-1 font-medium">Let's get started</h1>
-
-<!-- Contoh penggunaan route pada tag href -->
-<a href="{{ route('mahasiswa.show') }}">Klik Disini</a> 
-
-...
