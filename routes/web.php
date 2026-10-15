@@ -39,3 +39,14 @@ Route::delete('/matakuliah/{kode}', [MatakuliahController::class, 'destroy']);
 
 //p5
 Route::get('/home', [HomeController::class,'index']);
+
+Route::get('/login', function () {
+    return view('login');
+});
+use App\Http\Controllers\LoginController;
+
+Route::post('/auth/login', [LoginController::class, 'login']);
+
+use App\Http\Controllers\QuestionController;
+Route::post('question/store', [QuestionController::class, 'store'])
+		->name('question.store');
