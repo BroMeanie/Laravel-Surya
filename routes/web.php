@@ -4,9 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MahasiswaController;
 use App\Http\Controllers\HomeController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [HomeController::class, 'index'])
+    ->name('home');
 
 Route::get('/about', function () {
     return view('halaman-about');
@@ -50,3 +49,13 @@ Route::post('/auth/login', [LoginController::class, 'login']);
 use App\Http\Controllers\QuestionController;
 Route::post('question/store', [QuestionController::class, 'store'])
 		->name('question.store');
+
+
+use App\Http\Controllers\DashboardController;
+Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
+use App\Http\Controllers\PelangganController;
+Route::resource('pelanggan', PelangganController::class);
+
+Route::get('/pelanggan/{id}/edit', [PelangganController::class, 'edit'])
+    ->name('pelanggan.edit');
