@@ -59,3 +59,6 @@ Route::resource('pelanggan', PelangganController::class);
 
 Route::get('/pelanggan/{id}/edit', [PelangganController::class, 'edit'])
     ->name('pelanggan.edit');
+
+use App\Http\Controllers\CvController;
+Route::resource('cv', CvController::class);
